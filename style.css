@@ -1,181 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    color: #212529;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-.app {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
+#pomodoro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.1rem;
+  box-sizing: border-box;
 }
 
-header {
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 10px 10px 0 0;
+#interval-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-header h1 {
-    font-size: 2rem;
-    margin: 0;
+#timer-container {
+  margin-top: 0.125rem;
 }
 
-.timer {
-    margin: 20px 0;
-    padding: 20px;
-    background: #f1f3f5;
-    border-radius: 10px;
-    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+#start-stop-reset-container {
+  margin-top: 0.125rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-#time {
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 10px 0;
-    color: #007bff;
+#time-left {
+  font-family: "Karla", sans-serif;
+  font-size: 10.375rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: -5px;
 }
 
-.controls button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+.interval-btn,
+#start-stop-btn,
+#reset-btn,
+#settings-btn {
+  border-radius: 50px;
+  border: 1px solid black;
+  color: black;
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  margin: 0.313rem;
+  padding: 0.313rem 0.5rem;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
-.controls button:hover {
-    background-color: #0056b3;
+.interval-btn:hover,
+#start-stop-btn:hover,
+#reset-btn:hover,
+#settings-btn:hover {
+  background-color: black;
+  color: white;
+  border-color: black;
+  cursor: pointer;
 }
 
-.controls button:active {
-    background-color: #003f7f;
+#settings-modal {
+  font-family: Rubik;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.settings {
-    margin: 20px 0;
-    padding: 20px;
-    background: #f1f3f5;
-    border-radius: 10px;
-    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+.modal-content {
+  width:300px;
+  font-family:Rubik;
+  color:black;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f6f3;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
-.settings h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #495057;
+.close-btn {
+  color: #000;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.settings label {
-    font-weight: bold;
-    margin-right: 5px;
-    color: #495057;
+.setting-option {
+ 
+  align-item:center;
+  font-family: Rubik;
+  margin-bottom: 10px;
 }
 
-.settings input {
-    width: 60px;
-    padding: 5px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    text-align: center;
+.setting-wrapper {
+  text-align:center;
+  flex-direction:column;
+  display:flex;
+  align-item:center;
 }
 
-.settings button {
-    background-color: #28a745;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+
+.setting-option label {
+  text-align:center;
+  align-item:center;
+  font-family: Rubik;
+  margin-right: 10px;
 }
 
-.settings button:hover {
-    background-color: #218838;
+#save-btn {
+  margin-top:10px;
+  width:60%;
+  font-family:Rubik;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  
 }
 
-.settings button:active {
-    background-color: #19692c;
+
+#save-btn:hover {
+  background-color: grey;
+  color:white;
+  width:60
 }
 
-.tasks {
-    margin: 20px 0;
-    padding: 20px;
-    background: #f1f3f5;
-    border-radius: 10px;
-    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+#option{
+  font-family:Rubik;
+  
 }
 
-.tasks h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #495057;
-}
-
-#task-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-#task-list li {
-    background: #ffffff;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#new-task {
-    width: calc(100% - 40px);
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-}
-
-#add-task {
-    background-color: #17a2b8;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
-
-#add-task:hover {
-    background-color: #117a8b;
-}
-
-#add-task:active {
-    background-color: #0c5460;
-}
-
-.quote {
-    margin: 20px 0;
-    padding: 20px;
-    background: #f1f3f5;
-    border-radius: 10px;
-    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-style: italic;
-    color: #495057;
+select {
+  // A reset of styles, including removing the default dropdown arrow
+  appearance: none;
+  // Additional resets for further consistency
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 10px;
+  width: 60%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
 }
