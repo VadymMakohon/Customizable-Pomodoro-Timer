@@ -19,3 +19,15 @@ The Pomodoro Timer is a minimalist web application designed to help you stay foc
 - HTML5: For structuring the content.
 - CSS3: For styling the application, including hover effects, responsive design, and modal implementation.
 - JavaScript: For handling the timer logic and interactivity.
+
+## 📜 License
+
+This repository is for educational purposes only and has an MIT License
+
+### Show your support
+
+Give a ⭐ if you like these projects!
+
+# Contributors
+
+- [Vadym Makohon](https://github.com/VadymMakohon)
