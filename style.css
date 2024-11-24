@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    padding: 10px;
+}
+
+.timer {
+    margin: 20px 0;
+}
+
+#time {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.settings input {
+    width: 50px;
+    margin: 5px;
+    text-align: center;
+}
+
+.tasks {
+    margin: 20px 0;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
+    margin: 5px 0;
+    text-align: left;
+}
+
+.quote {
+    font-style: italic;
+    margin-top: 20px;
+}
