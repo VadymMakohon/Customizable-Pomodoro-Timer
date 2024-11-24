@@ -5,6 +5,14 @@
 body {
   overflow-x: hidden;
   overflow-y: hidden;
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 #pomodoro-container {
@@ -12,37 +20,35 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: auto;
   max-width: 500px;
   margin: 0 auto;
-  padding: 1.1rem;
+  padding: 1.5rem;
   box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+#timer-container {
+  margin-top: 1rem;
 }
 
 #interval-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-#timer-container {
-  margin-top: 0.125rem;
-}
-
-#start-stop-reset-container {
-  margin-top: 0.125rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 #time-left {
   font-family: "Karla", sans-serif;
-  font-size: 10.375rem;
+  font-size: 5rem;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 1rem;
-  letter-spacing: -5px;
+  margin-bottom: 1.5rem;
+  letter-spacing: -2px;
+  color: #333;
 }
 
 .interval-btn,
@@ -50,117 +56,129 @@ body {
 #reset-btn,
 #settings-btn {
   border-radius: 50px;
-  border: 1px solid black;
-  color: black;
-  font-family: "Rubik", sans-serif;
+  border: 2px solid #333;
+  color: #333;
   font-size: 1rem;
   margin: 0.313rem;
-  padding: 0.313rem 0.5rem;
+  padding: 0.5rem 1.5rem;
   text-align: center;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
 .interval-btn:hover,
 #start-stop-btn:hover,
 #reset-btn:hover,
 #settings-btn:hover {
-  background-color: black;
-  color: white;
-  border-color: black;
-  cursor: pointer;
+  background-color: #333;
+  color: #ffffff;
+  border-color: #333;
+  transform: scale(1.05);
+}
+
+#start-stop-btn {
+  background-color: #333;
+  color: #ffffff;
+}
+
+#start-stop-btn:hover {
+  background-color: #444;
+  border-color: #444;
 }
 
 #settings-modal {
-  font-family: Rubik;
   display: none;
   align-items: center;
   justify-content: center;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
-  width:300px;
-  font-family:Rubik;
-  color:black;
-  align-items: center;
-  justify-content: center;
-  background-color: #f7f6f3;
+  width: 300px;
+  text-align: center;
+  background-color: #ffffff;
   padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
 }
 
 .close-btn {
-  color: #000;
-  float: right;
-  font-size: 30px;
+  color: #333;
+  font-size: 1.5rem;
   font-weight: bold;
+  float: right;
   cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #555;
 }
 
 .setting-option {
- 
-  align-item:center;
-  font-family: Rubik;
-  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .setting-wrapper {
-  text-align:center;
-  flex-direction:column;
-  display:flex;
-  align-item:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
 .setting-option label {
-  text-align:center;
-  align-item:center;
-  font-family: Rubik;
-  margin-right: 10px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 #save-btn {
-  margin-top:10px;
-  width:60%;
-  font-family:Rubik;
-  background-color: black;
-  color: #fff;
+  background-color: #333;
+  color: #ffffff;
   border: none;
-  border-radius: 100px;
-  padding: 10px 20px;
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 
 #save-btn:hover {
-  background-color: grey;
-  color:white;
-  width:60
-}
-
-#option{
-  font-family:Rubik;
-  
+  background-color: #444;
+  transform: scale(1.05);
 }
 
 select {
   appearance: none;
-  background-color: transparent;
-  border: none;
-  padding: 0 1em 0 0;
-  margin: 10px;
-  width: 60%;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: inherit;
-  line-height: inherit;
+  background-color: #f7f7f7;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  width: 100%;
+  text-align: center;
+}
+
+select:focus {
+  border-color: #888;
+}
+
+select:hover {
+  background-color: #eeeeee;
+}
+
+button {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background-color: #333;
+  color: #fff;
 }
