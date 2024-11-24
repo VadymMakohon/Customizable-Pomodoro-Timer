@@ -153,9 +153,7 @@ body {
 }
 
 select {
-  // A reset of styles, including removing the default dropdown arrow
   appearance: none;
-  // Additional resets for further consistency
   background-color: transparent;
   border: none;
   padding: 0 1em 0 0;
