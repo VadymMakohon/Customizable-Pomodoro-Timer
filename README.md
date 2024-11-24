@@ -2,7 +2,7 @@
 
 The Pomodoro Timer is a minimalist web application designed to help you stay focused and productive using the Pomodoro Technique. With a sleek and modern interface, this timer allows you to manage focus intervals, short breaks, and long breaks effectively. It also includes customizable settings for themes and font colors, making it adaptable to both light and dark modes.
 
-## Preview
+## Preview![preview](https://github.com/user-attachments/assets/40ce7a24-d9bd-4862-ae6a-c78363dbcd17)
 
 ## Features
 
