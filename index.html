@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1>Pomodoro Timer</h1>
+        </header>
+        <main>
+            <div class="timer">
+                <h2 id="task-name">Current Task: None</h2>
+                <div id="time">25:00</div>
+                <div class="controls">
+                    <button id="start">Start</button>
+                    <button id="pause">Pause</button>
+                    <button id="reset">Reset</button>
+                </div>
+            </div>
+            <div class="settings">
+                <h3>Settings</h3>
+                <label for="work-duration">Work (min):</label>
+                <input type="number" id="work-duration" value="25" />
+                <label for="break-duration">Break (min):</label>
+                <input type="number" id="break-duration" value="5" />
+                <button id="apply-settings">Apply</button>
+            </div>
+            <div class="tasks">
+                <h3>Tasks</h3>
+                <ul id="task-list"></ul>
+                <input type="text" id="new-task" placeholder="New Task" />
+                <button id="add-task">Add Task</button>
+            </div>
+            <div class="quote">
+                <h3 id="motivational-quote">"Stay focused and never give up!"</h3>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
