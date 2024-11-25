@@ -4,6 +4,8 @@ The Pomodoro Timer is a minimalist web application designed to help you stay foc
 
 ## Preview![preview](https://github.com/user-attachments/assets/40ce7a24-d9bd-4862-ae6a-c78363dbcd17)
 
+## Sample Website
+A live demo is already available via this [link](https://vadymmakohon.github.io/Customizable-Pomodoro-Timer/)
 ## Features
 
 - Focus Timer: A default 25-minute timer to focus on your tasks.
